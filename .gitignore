@@ -1,0 +1,18 @@
+node_modules
+.DS_Store
+.github
+dist
+.npmrc
+.cache
+.history
+## ide
+**/.idea
+*.iml
+
+## backend
+**/target
+**/logs
+**/dist
+
+## front
+/yarn-error.log

@@ -1,0 +1,515 @@
+@import "variables.less";
+
+.app-container {
+  padding: 20px;
+  position: relative;
+  //min-height: 100%;
+  overflow: auto;
+  background: #FFFFFF;
+  border-radius: 6px;
+}
+
+.table-page-search-wrapper {
+
+  .ant-form-inline {
+
+    .ant-form-item {
+      display: flex;
+      margin-bottom: 24px;
+      margin-right: 0;
+
+      .ant-form-item-control-wrapper {
+        flex: 1 1;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      > .ant-form-item-label {
+        line-height: 32px;
+        padding-right: 8px;
+        width: auto;
+      }
+
+      .ant-form-item-control {
+        height: 32px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  .table-page-search-submitButtons {
+    display: block;
+    margin-bottom: 24px;
+    white-space: nowrap;
+  }
+
+}
+
+/** form表单主题样式 */
+.search-form {
+  .ant-form-item {
+    margin-bottom: 24px;
+
+    .ant-form-item-control {
+      height: 32px;
+      line-height: 32px;
+    }
+
+    .ant-form-item-label {
+      line-height: 32px;
+      padding-right: 8px;
+    }
+
+    .ant-input:not(.ant-calendar-picker-input) {
+      width: 187px;
+    }
+
+    .ant-select {
+      width: 187px;
+    }
+  }
+}
+
+.search-button {
+  button:not(:first-child) {
+    margin-left: 8px;
+  }
+
+  .uploadDiv {
+    display: inline-block;
+  }
+}
+
+.sub-form-item-bottom {
+  .ant-form-item {
+    margin-bottom: 10px;
+  }
+}
+
+.getFormItem(@index:0) when (@index <= 20) {
+  @pixel: unit(@index, px);
+  .form-item-mb@{index} {
+    &.ant-form-item {
+      margin-bottom: @pixel;
+    }
+
+    .ant-form-item {
+      margin-bottom: @pixel;
+    }
+  }
+  .getFormItem(@index + 1)
+}
+
+.getFormItem();
+
+/** [表格主题样式一] 表格强制列不换行 */
+.table-nowrap {
+  td, th {
+    white-space: nowrap;
+    margin-top: 10px;
+  }
+
+  .ant-table-align-center {
+    padding: 12px 12px !important;
+  }
+
+  .ant-table-selection-column {
+    padding: 12px 22px !important;
+  }
+
+  /** 列自适应，弊端会导致列宽失效 */
+
+  &.ant-table-wrapper .ant-table-content {
+    overflow-x: auto;
+  }
+}
+
+.table-action {
+  padding: 0 10px;
+
+  a:not(:last-child) {
+    margin-right: 5px;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      background: #1b80be;
+      width: 1px;
+      height: 13px;
+      vertical-align: center;
+      margin-left: 5px;
+    }
+  }
+}
+
+.one-col-form {
+  &.ant-form {
+    @labelWidth: 130px;
+
+    .ant-form-item {
+      width: 100%;
+      display: flex;
+
+      .ant-form-item-label {
+        width: @labelWidth;
+      }
+
+      &.longLabel .ant-form-item-label {
+        white-space: normal;
+        line-height: 20px;
+        padding-left: 10px;
+        padding-right: 3px;
+      }
+
+      .ant-form-item-control-wrapper {
+        width: calc(100% - @labelWidth);
+      }
+    }
+  }
+}
+
+.one-col-form-sub {
+  &.ant-form {
+    @labelWidth: 70px;
+
+    .ant-form-item {
+      width: 100%;
+      display: flex;
+
+      .ant-form-item-label {
+        width: @labelWidth;
+      }
+
+      &.longLabel .ant-form-item-label {
+        white-space: normal;
+        line-height: 20px;
+        padding-left: 10px;
+        padding-right: 3px;
+      }
+
+      .ant-form-item-control-wrapper {
+        width: calc(100% - @labelWidth);
+      }
+    }
+  }
+}
+
+.one-col-form-longLabel {
+  &.ant-form {
+    @labelWidth: 170px;
+
+    .ant-form-item {
+      width: 100%;
+      display: flex;
+
+      .ant-form-item-label {
+        width: @labelWidth;
+      }
+
+      &.longLabel .ant-form-item-label {
+        white-space: normal;
+        line-height: 20px;
+        padding-left: 10px;
+        padding-right: 3px;
+      }
+
+      .ant-form-item-control-wrapper {
+        width: calc(100% - @labelWidth);
+      }
+    }
+  }
+}
+
+.two-col-form {
+  &.ant-form {
+    @labelWidth: 130px;
+
+    .ant-form-item {
+      width: 50%;
+      display: flex;
+
+      .ant-form-item-label {
+        width: @labelWidth;
+      }
+
+      &.longLabel .ant-form-item-label {
+        white-space: normal;
+        line-height: 20px;
+        padding-left: 10px;
+        padding-right: 3px;
+      }
+
+      .ant-form-item-control-wrapper {
+        width: calc(100% - @labelWidth);
+      }
+    }
+  }
+}
+
+.two-col-form-longLabel {
+  &.ant-form {
+    @labelWidth: 170px;
+
+    .ant-form-item {
+      width: 50%;
+      display: flex;
+
+      .ant-form-item-label {
+        width: @labelWidth;
+      }
+
+      &.longLabel .ant-form-item-label {
+        white-space: normal;
+        line-height: 20px;
+        padding-left: 10px;
+        padding-right: 3px;
+      }
+
+      .ant-form-item-control-wrapper {
+        width: calc(100% - @labelWidth);
+      }
+    }
+  }
+}
+
+.two-col-form-longLabel-lg {
+  &.ant-form {
+    @labelWidth: 220px;
+
+    .ant-form-item {
+      width: 50%;
+      display: flex;
+
+      .ant-form-item-label {
+        width: @labelWidth;
+      }
+
+      .ant-form-item-control-wrapper {
+        width: calc(100% - @labelWidth);
+      }
+    }
+  }
+}
+
+.two-col-form {
+  &.ant-form {
+    @labelWidth: 130px;
+
+    .ant-form-item {
+      width: 50%;
+      display: flex;
+
+      .ant-form-item-label {
+        width: @labelWidth;
+      }
+
+      &.longLabel .ant-form-item-label {
+        white-space: normal;
+        line-height: 20px;
+        padding-left: 10px;
+        padding-right: 3px;
+      }
+
+      .ant-form-item-control-wrapper {
+        width: calc(100% - @labelWidth);
+      }
+    }
+  }
+}
+
+.three-col-form {
+  &.ant-form {
+    @labelWidth: 130px;
+
+    .ant-form-item {
+      width: 33.33%;
+      display: flex;
+
+      .ant-form-item-label {
+        width: @labelWidth;
+      }
+
+      &.longLabel .ant-form-item-label {
+        white-space: normal;
+        line-height: 20px;
+        padding-left: 10px;
+        padding-right: 3px;
+      }
+
+      .ant-form-item-control-wrapper {
+        width: calc(100% - @labelWidth);
+      }
+    }
+  }
+}
+
+.ant-modal-root.detailModal {
+  .ant-modal-footer {
+    .ant-btn-primary {
+      display: none;
+    }
+  }
+}
+
+.text-cut {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.full-screen-modal {
+
+  .ant-modal {
+    @spacing: 10px;
+    width: calc(100% - (@sideMenuWidth + 2 * @spacing)) !important;
+    margin-left: @sideMenuWidth + @spacing;
+    margin-right: @spacing;
+    top: @headerHeight + @spacing;
+    padding-bottom: @spacing !important;
+
+    .ant-modal-content {
+      height: calc(100vh - (@headerHeight + 2 * @spacing));
+      overflow-y: auto;
+
+    }
+  }
+}
+
+.ant-popover-inner .ant-popover-buttons {
+  display: flex;
+  //width: 130px;
+  //
+  //.ant-btn-sm {
+  //  height: 30px !important;
+  //  padding: 0 10px !important;
+  //  font-size: unset !important;
+  //  border-radius: 6px !important;
+  //}
+}
+
+//leaflet-tooltip样式设置
+.leaflet-tooltip {
+  background: #0D4274 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.hideScrollBar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-webkit-media-controls-timeline {
+    display: none; /* 隐藏进度条（适用于webkit浏览器） */
+  }
+
+  &::-webkit-media-controls-enclosure {
+    display: flex; /* 显示包含控件的容器（适用于webkit浏览器） */
+    justify-content: flex-end; /* 将全屏按钮放置在右侧（适用于webkit浏览器） */
+  }
+
+  &::-webkit-media-controls-fullscreen-button {
+    order: 1; /* 将全屏按钮排列在控件的最右侧（适用于webkit浏览器） */
+  }
+
+  -ms-overflow-style: none; /* 隐藏滚动条（适用于IE和Edge浏览器） */
+  scrollbar-width: none; /* 隐藏滚动条（适用于Firefox浏览器） */
+}
+
+.maxHeightModal {
+  .ant-modal {
+    padding-bottom: 0;
+
+    .ant-modal-body {
+      height: calc(100vh - 120px);
+      overflow-y: auto;
+    }
+  }
+}
+
+.fullScreenContainer {
+  background: white;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.noPadding {
+  padding: 0 !important;
+}
+
+.customLightTable {
+  &.ant-table-wrapper:not(.not-blue-theme) {
+    .ant-table {
+      @hover-color: rgba(50, 182, 56); //表格悬浮行背景色
+      table {
+        tr {
+          &.ant-table-row:hover > td { //无固定列
+            background: @hover-color;
+          }
+
+          &.ant-table-row-hover td { //有固定列
+            background: @hover-color;
+          }
+
+          &.cu-hover {
+            background: @hover-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.disabled-white {
+  &.ant-input-disabled, .ant-input[disabled] {
+    background: white;
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  .ant-input-disabled, .ant-input[disabled] {
+    background: white;
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  .ant-select-selection {
+    background: white;
+
+    .ant-select-selection__choice {
+      color: #666 !important;
+    }
+  }
+}
+
+.xxtbModal {
+  .subItem {
+    border-bottom: 1px solid #f1f1f1;
+    padding: 10px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:last-of-type {
+      border: none;
+    }
+  }
+}
+
+.events-disabled {
+  pointer-events: none;
+}
+
+.events-auto {
+  pointer-events: auto;
+}
+
+.scrollModal {
+  .ant-modal {
+    padding-bottom: 0 !important;
+
+    .ant-modal-body {
+      height: calc(100vh - 120px);
+      overflow: auto;
+    }
+  }
+}
