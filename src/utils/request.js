@@ -8,8 +8,8 @@ import { ACCESS_TOKEN, TENANT_ID } from '@/store/mutation-types'
 let baseURL
 if (process.env.NODE_ENV === 'development') {
   // baseURL = 'http://127.0.0.1:8080/jeecg-boot'// 本地
-  baseURL = 'http://192.168.1.32:8086/jeecg-boot'// 徐静静
-  // baseURL = 'http://116.204.4.51:9875/zhyw'// 测试环境
+  // baseURL = 'http://192.168.1.32:8086/jeecg-boot'// 徐静静
+  baseURL = 'http://116.204.4.51:9875/zhyw'// 测试环境
 } else {
   baseURL = process.env.VUE_APP_API_BASE_URL
 }
